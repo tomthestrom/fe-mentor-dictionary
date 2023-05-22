@@ -1,0 +1,14 @@
+.control-hub {
+  display: flex;
+  margin-bottom: 1.5rem;
+
+  &__home {
+    height: 2rem;
+    width: 1.5rem;
+    margin-right: auto;
+    img {
+      height: inherit;
+      width: inherit;
+    }
+  }
+}

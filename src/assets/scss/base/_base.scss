@@ -6,6 +6,23 @@
   box-sizing: inherit;
 }
 
+:root {
+  --color-grey-75: #757575;
+  --color-grey-E9: #E9E9E9;
+  --color-grey-F4: #F4F4F4;
+
+  --color-white-FF: #FFFFFF;
+}
+
+button {
+  background: none; 
+  border: none;
+}
+
+
 body {
   margin: 1.5rem 1.5rem 5.25rem 1.5rem;
+}
+
+.btn--reset {
 }

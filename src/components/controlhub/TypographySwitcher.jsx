@@ -1,4 +1,5 @@
 import TypographyItem from "./TypographyItem";
+import Arrow from "../svg/Arrow";
 /**
  * @TODO: Maybe put it into some config?
  */
@@ -20,12 +21,14 @@ const fonts = [
     active: false,
   },
 ];
+
 function TypographySwitcher() {
   const activeFont = fonts.find(font => font.active);
 
   return (
     <form className="typography-switcher">
       <TypographyItem id={activeFont.id} name={activeFont.name}></TypographyItem>
+      <button class="typography-switcher__arrow"><Arrow /></button>
     </form>
   );
 }

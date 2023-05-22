@@ -11,4 +11,9 @@
       width: inherit;
     }
   }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
 }

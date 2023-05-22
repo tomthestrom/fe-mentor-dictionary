@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Inconsolata";
+  src: local("Inconsolata"),
+    url("../../fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+      format("opentype");
+}
+:root {
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+}

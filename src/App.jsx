@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import ControlHub from './components/ControlHub'
+import { useState } from "react";
+import ControlHub from "./components/controlhub/ControlHub";
+import Search from "./components/search/Search";
+
 //import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      <ControlHub></ControlHub>
+      <ControlHub/>
+      <Search/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

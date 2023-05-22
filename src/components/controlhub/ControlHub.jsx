@@ -17,8 +17,8 @@ function ControlHub() {
       <a className="control-hub__home" href={HOME_URL}>
         <img src={LOGO_URL} alt="Home" />
       </a>
-      <TypographySwitcher/>
-      <ThemeToggler/>
+      <TypographySwitcher />
+      <ThemeToggler />
     </div>
   );
 }

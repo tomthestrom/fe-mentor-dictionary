@@ -5,6 +5,12 @@
       format("opentype");
 }
 :root {
+  --font-size--s: calc((14/16) * 1rem);; /* 14px */
+  --font-size--m: calc((16/16) * 1rem); /* 16px */
+
+  --font-size--heading-s: calc((20/16) * 1rem); /* 20px */
+  --font-size--heading-m: calc((24/16) * 1rem); /* 24px */
+  --font-size--heading-l: calc((64/16) * 1rem); /* 64px */
 }
 
 body {

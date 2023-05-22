@@ -28,7 +28,7 @@ function TypographySwitcher() {
   return (
     <form className="typography-switcher">
       <TypographyItem id={activeFont.id} name={activeFont.name}></TypographyItem>
-      <button class="typography-switcher__arrow"><Arrow /></button>
+      <button className="typography-switcher__arrow"><Arrow /></button>
     </form>
   );
 }

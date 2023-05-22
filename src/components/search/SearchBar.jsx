@@ -1,9 +1,16 @@
+import Search from "../svg/Search";
 function SearchBar() {
   return (
-    <form>
-        <input aria-label="search bar" type="text" name="search-bar"/>
-        <button type="submit"></button>
+    <form className="search-bar">
+      <input
+        className="search-bar__input"
+        aria-label="search bar"
+        type="text"
+        name="search-bar"
+        placeholder="Search for any word..."
+      />
+      <button className="search-bar__submit" type="submit"><Search/></button>
     </form>
-  )
+  );
 }
-export default SearchBar
+export default SearchBar;

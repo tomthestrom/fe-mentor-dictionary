@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: inherit;
 }
+*,*:focus,*:hover{
+    outline:none;
+}
 
 :root {
   --color-grey-75: #757575;
@@ -12,6 +15,8 @@
   --color-grey-F4: #F4F4F4;
 
   --color-white-FF: #FFFFFF;
+
+  --color-purple-default: #A445ED;
 }
 
 button {
@@ -22,7 +27,5 @@ button {
 
 body {
   margin: 1.5rem 1.5rem 5.25rem 1.5rem;
-}
-
-.btn--reset {
+  box-sizing: border-box;
 }

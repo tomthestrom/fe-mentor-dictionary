@@ -1,11 +1,31 @@
+import TypographyItem from "./TypographyItem";
+/**
+ * @TODO: Maybe put it into some config?
+ */
+
+const fonts = [
+  {
+    id: "mono",
+    name: "Mono",
+    active: true,
+  },
+  {
+    id: "sans-serif",
+    name: "Sans Serif",
+    active: false,
+  },
+  {
+    id: "serif",
+    name: "Serif",
+    active: false,
+  },
+];
 function TypographySwitcher() {
+  const activeFont = fonts.find(font => font.active);
+
   return (
     <form className="typography-switcher">
-      <select aria-label="select font" name="select-font" id="">
-        <option value="mono">Mono</option>
-        <option value="sans-serif">Sans Serif</option>
-        <option value="mono">Serif</option>
-      </select>
+      <TypographyItem id={activeFont.id} name={activeFont.name}></TypographyItem>
     </form>
   );
 }

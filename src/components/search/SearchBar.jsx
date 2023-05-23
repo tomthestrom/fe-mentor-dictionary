@@ -1,6 +1,25 @@
+import { useState } from "react";
 import Search from "../svg/Search";
 
-function SearchBar({ searchVal, onInputHandler, onSubmitHandler }) {
+const SEARCH_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+const makeRequestURL = (word) => SEARCH_URL + encodeURIComponent(word);
+
+function SearchBar({setSearchRes, setGotResult}) {
+  const [searchVal, setSearchVal] = useState("");
+
+  const onInputHandler = (e) => setSearchVal(e.target.value);
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(makeRequestURL(searchVal));
+      const json = await response.json();
+      setSearchRes(json);
+      setGotResult(true);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <form className="search-bar" onSubmit={onSubmitHandler}>
@@ -13,7 +32,9 @@ function SearchBar({ searchVal, onInputHandler, onSubmitHandler }) {
         value={searchVal}
         onInput={onInputHandler}
       />
-      <button className="search-bar__submit" type="submit"><Search/></button>
+      <button className="search-bar__submit" type="submit">
+        <Search />
+      </button>
     </form>
   );
 }

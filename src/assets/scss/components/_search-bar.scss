@@ -15,8 +15,17 @@
       color: var(--color-grey-75);
     }
 
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       outline: 1px solid var(--color-purple-default);
+    }
+
+    //override chrome defaults when autofilling
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px var(--color-grey-F4) inset !important;
     }
   }
 

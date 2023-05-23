@@ -4,20 +4,24 @@ import Search from "../svg/Search";
 const SEARCH_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const makeRequestURL = (word) => SEARCH_URL + encodeURIComponent(word);
 
-function SearchBar({setSearchRes, setGotResult}) {
+function SearchBar({setSearchRes}) {
   const [searchVal, setSearchVal] = useState("");
 
   const onInputHandler = (e) => setSearchVal(e.target.value);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+
     try {
       const response = await fetch(makeRequestURL(searchVal));
+      if (!response.ok) {
+        throw new Error("No Definitions Found");
+      }
       const json = await response.json();
-      setSearchRes(json);
-      setGotResult(true);
+      setSearchRes(json[0]);
     } catch (e) {
       console.error(e);
+      setSearchRes({})
     }
   };
 

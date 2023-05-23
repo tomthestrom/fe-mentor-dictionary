@@ -1,5 +1,7 @@
-function SearchResults({ props }) {
+import PartOfSpeech from "./PartOfSpeech";
 
+function SearchResults({ props }) {
+  console.log(props);
   /**
    * used for retrieving audioUrl and phonetic transcription
    * Expected val: "audio" || "text"
@@ -8,8 +10,10 @@ function SearchResults({ props }) {
     if (props.phonetics === undefined || props.phonetics.length === 0) {
       return null;
     }
-    return props.phonetics.find(item => (item[val] !== undefined) && (item[val].length > 0))[val];
-  }
+    return props.phonetics.find(
+      (item) => item[val] !== undefined && item[val].length > 0
+    )[val];
+  };
 
   const phonetic = props.phonetic ?? getFromPhonetics(props, "text");
   const audioUrl = getFromPhonetics(props, "audio");
@@ -21,10 +25,11 @@ function SearchResults({ props }) {
           <h1 className="word-forms__word">{props.word}</h1>
           <span className="word-forms__phonetic">{phonetic}</span>
         </div>
-        <div className="word-forms__audio">
-          {audioUrl}
-        </div>
+        <div className="word-forms__audio">{audioUrl}</div>
       </div>
+      {props.meanings.map((partOfSpeech) => (
+        <PartOfSpeech key={partOfSpeech.partOfSpeech} props={partOfSpeech} />
+      ))}
     </main>
   );
 }

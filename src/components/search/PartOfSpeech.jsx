@@ -22,7 +22,7 @@ function PartOfSpeech({ props }) {
       </ul>
       {synonyms.length > 0 && (
         <footer className="pof-speech__footer">
-          <h3 className="pof-speech__synonyms">Synonyms</h3>
+          <h3 className="pof-speech__synonyms-title">Synonyms</h3>
 
           <ul className="pof-speech__synonyms">
             {synonyms.map((synonym, i) => {

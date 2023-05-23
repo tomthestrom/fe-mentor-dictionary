@@ -1,0 +1,72 @@
+.pof-speech {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &:last-child {
+    margin-bottom: calc((60 / 16) * 1rem);
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+  &__function {
+    font-size: var(--font-size--l);
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 2.25rem;
+  }
+
+  &__meaning {
+    color: var(--color-grey-75);
+    font-weight: normal;
+    font-size: var(--font-size-m);
+  }
+
+  &__definitions {
+    list-style: none;
+    margin-bottom: 1.5rem;
+  }
+
+  &__definition {
+    font-size: inherit;
+    line-height: 1.5;
+    padding-left: 1rem;
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+
+    &::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: var(--color-purple-default); /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &__synonyms-title {
+    color: var(--color-grey-75);
+    font-weight: normal;
+    font-size: var(--font-size-m);
+    margin-right: 2.5rem;
+  }
+
+  &__synonyms {
+    list-style: none;
+  }
+
+  &__synonym {
+    font-size: inherit;
+    font-weight: bold;
+    color: var(--color-purple-default);
+
+    &:not(:last-child) {
+      margin-bottom: 0.25rem;
+    }
+  }
+}

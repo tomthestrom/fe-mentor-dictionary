@@ -1,7 +1,12 @@
+import { useRef } from "react";
+import Play from "../svg/Play";
 import PartOfSpeech from "./PartOfSpeech";
 
 function SearchResults({ props }) {
-  console.log(props);
+  const audioRef = useRef(null);
+  const handleClick = () => {
+    audioRef.current.play();
+  }
   /**
    * used for retrieving audioUrl and phonetic transcription
    * Expected val: "audio" || "text"
@@ -20,13 +25,21 @@ function SearchResults({ props }) {
 
   return (
     <main className="search-results">
-      <div className="word-forms">
-        <div className="word-forms__written">
-          <h1 className="word-forms__word">{props.word}</h1>
-          <span className="word-forms__phonetic">{phonetic}</span>
-        </div>
-        <div className="word-forms__audio">{audioUrl}</div>
-      </div>
+      <section className="word-forms">
+        <h1 className="word-forms__word">{props.word}</h1>
+        <figcaption className="word-forms__spoken">
+          <figcaption className="word-forms__phonetic">{phonetic}</figcaption>
+          <audio
+            ref={audioRef}
+            id="word-recording"
+            src={audioUrl}
+            className="word-forms__audio"
+          ></audio>
+        </figcaption>
+        <button onClick={handleClick} aria-controls="word-recording" className="word-forms__play">
+          <Play />
+        </button>
+      </section>
       {props.meanings.map((partOfSpeech) => (
         <PartOfSpeech key={partOfSpeech.partOfSpeech} props={partOfSpeech} />
       ))}

@@ -1,0 +1,32 @@
+.word-forms {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2.5rem 1.5rem;
+  margin-bottom: calc((34/16) * 1rem);
+
+  &__word {
+    grid-area: 1 / 1 / 2 / 2;
+    font-size: var(--font-size--heading-l);
+    line-height: 1.25;
+  }
+  &__spoken {
+    grid-area: 2 / 1 / -1 / 1;
+  }
+  &__phonetic {
+    color: var(--color-purple-default);
+    font-size: var(--font-size--l);
+    line-height: 1.333333;
+  }
+
+  &__play {
+    grid-area: 1 / 2 / -1 / -1;
+    align-self: center;
+    justify-self: end;
+    height: 3rem;
+    width: 3rem;
+    svg {
+      height: inherit;
+      width: inherit;
+    }
+  }
+}

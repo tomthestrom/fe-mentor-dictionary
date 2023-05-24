@@ -2,9 +2,6 @@
   &:not(:last-child) {
     margin-bottom: 2rem;
   }
-  &:last-child {
-    margin-bottom: calc((60 / 16) * 1rem);
-  }
 
   &__header {
     margin-bottom: 1rem;
@@ -13,7 +10,7 @@
     font-size: var(--font-size--l);
     font-weight: bold;
     font-style: italic;
-    margin-bottom: 2.25rem;
+    margin-bottom: 2rem;
   }
 
   &__meaning {
@@ -22,12 +19,14 @@
     font-size: var(--font-size-m);
   }
 
-  &__definitions {
+  &__entries {
     list-style: none;
-    margin-bottom: 1.5rem;
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
   }
 
-  &__definition {
+  &__entry {
     font-size: inherit;
     line-height: 1.5;
     padding-left: 1rem;
@@ -35,6 +34,11 @@
       margin-bottom: 0.75rem;
     }
 
+  }
+
+  &__definition {
+    display: inline-block;
+    margin-bottom: 0.75rem;
     &::before {
       content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
       color: var(--color-purple-default); /* Change the color */
@@ -43,6 +47,10 @@
       width: 1em; /* Also needed for space (tweak if needed) */
       margin-left: -1em; /* Also needed for space (tweak if needed) */
     }
+  }
+
+  &__example {
+    color: var(--color-grey-75);
   }
 
   &__footer {

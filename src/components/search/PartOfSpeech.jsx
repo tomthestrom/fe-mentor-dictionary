@@ -11,11 +11,14 @@ function PartOfSpeech({ props }) {
         <h3 className="pof-speech__meaning">Meaning</h3>
       </header>
 
-      <ul className="pof-speech__definitions">
+      <ul className="pof-speech__entries">
         {definitions.map((definition, i) => {
           return (
-            <li key={i} className="pof-speech__definition">
-              {definition.definition}
+            <li key={i} className="pof-speech__entry">
+              <span className="pof-speech__definition">{definition.definition}</span>
+              {definition.example && 
+              <div className="pof-speech__example">{`"${definition.example}"`}</div> 
+              }
             </li>
           );
         })}

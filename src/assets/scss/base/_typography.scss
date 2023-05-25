@@ -1,7 +1,32 @@
 @font-face {
   font-family: "Inconsolata";
+  font-style: normal;
   src: local("Inconsolata"),
     url("../../fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  src: local("Inter"),
+    url("../../fonts/inter/Inter-VariableFont_slnt\,wght.ttf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  src: local("Lora"),
+    url("../../fonts/lora/Lora-VariableFont_wght.ttf")
+      format("opentype");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  src: local("Lora"),
+    url("../../fonts/lora/Lora-Italic-VariableFont_wght.ttf")
       format("opentype");
 }
 :root {
@@ -13,10 +38,13 @@
   --font-size--heading-m: calc((24/16) * 1rem); /* 24px */
   --font-size--heading-l: calc((32/16) * 1rem); /* 64px */
   --font-size--heading-xl: calc((64/16) * 1rem); /* 64px */
+  
+  --default-font-family: "Inconsolata", monospace;
+  --body-font-family: var(--default-font-family);
 }
 
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: var(--body-font-family);
 }
 input {
   font-family: inherit;

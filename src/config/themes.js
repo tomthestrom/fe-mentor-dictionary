@@ -7,21 +7,21 @@ const DRP_DWN_BG_CLR = "--drp-dwn-bg-color";
 const DRP_DWN_B_SHDW = "--drp-dwn-b-shadow";
 
 
-const lightMode = new Map();
-const darkMode = new Map();
+const lightScheme = new Map();
+const darkScheme = new Map();
 
-lightMode.set(MAIN_BG_CLR, "var(--color-white-FF)");
-lightMode.set(MAIN_FONT_CLR, "var(--color-black-2D)");
-lightMode.set(SEARCH_BG_CLR, "var(--color-grey-F4)");
-lightMode.set(SEARCH_PHOLDER_CLR, "var(--color-grey-75)");
-lightMode.set(DRP_DWN_BG_CLR, "var(--main-bg-color)");
-lightMode.set(DRP_DWN_B_SHDW, "var(--box-shadow-dark)");
+lightScheme.set(MAIN_BG_CLR, "var(--color-white-FF)");
+lightScheme.set(MAIN_FONT_CLR, "var(--color-black-2D)");
+lightScheme.set(SEARCH_BG_CLR, "var(--color-grey-F4)");
+lightScheme.set(SEARCH_PHOLDER_CLR, "var(--color-grey-75)");
+lightScheme.set(DRP_DWN_BG_CLR, "var(--main-bg-color)");
+lightScheme.set(DRP_DWN_B_SHDW, "var(--box-shadow-dark)");
 
-darkMode.set(MAIN_BG_CLR, "var(--color-black-05)");
-darkMode.set(MAIN_FONT_CLR, "var(--color-white-FF)");
-darkMode.set(SEARCH_BG_CLR, "var(--color-black-2D)");
-darkMode.set(SEARCH_PHOLDER_CLR, "var(--color-grey-F4)");
-darkMode.set(DRP_DWN_BG_CLR, "var(--search-bar-bg-color)");
-darkMode.set(DRP_DWN_B_SHDW, "var(--box-shadow-purple)");
+darkScheme.set(MAIN_BG_CLR, "var(--color-black-05)");
+darkScheme.set(MAIN_FONT_CLR, "var(--color-white-FF)");
+darkScheme.set(SEARCH_BG_CLR, "var(--color-black-2D)");
+darkScheme.set(SEARCH_PHOLDER_CLR, "var(--color-grey-F4)");
+darkScheme.set(DRP_DWN_BG_CLR, "var(--search-bar-bg-color)");
+darkScheme.set(DRP_DWN_B_SHDW, "var(--box-shadow-purple)");
 
-export { lightMode as lightModeCfg, darkMode as darkModeCfg };
+export { lightScheme as lightSchemeCfg, darkScheme as darkSchemeCfg };

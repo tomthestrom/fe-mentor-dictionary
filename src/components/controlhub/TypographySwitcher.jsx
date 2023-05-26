@@ -1,48 +1,29 @@
 import TypographyItem from "./TypographyItem";
 import Arrow from "../svg/Arrow";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
 import { setRootProp } from "../../utils/css";
-/**
- * @TODO: Maybe put it into some config?
- */
+import fonts from "../../config/fonts";
+import UserConfig from "../../config/user";
 
 const BODY_FONT_CUSTOM_PROP = "--default-font-family";
 
-const fonts = [
-  {
-    id: "mono",
-    name: "Mono",
-    active: true,
-    cssFontFamily: '"Inconsolata", monospace',
-  },
-  {
-    id: "sans-serif",
-    name: "Sans Serif",
-    active: false,
-    cssFontFamily: '"Inter", sans-serif',
-  },
-  {
-    id: "serif",
-    name: "Serif",
-    active: false,
-    cssFontFamily: '"Lora", serif',
-  },
-];
-
 function TypographySwitcher() {
-  const [activeFont, setActiveFont] = useState(
-    fonts.find((font) => font.active)
-  );
+  const getFontById = (id) => fonts.find((font) => font.id === id);
+
+  const getInitActiveFont = () => {
+    const cfgFontId = UserConfig.getPreferredFontId();
+    return getFontById(cfgFontId) ?? fonts.find((font) => font.default);
+  };
+
+  const [activeFont, setActiveFont] = useState(getInitActiveFont());
+
   const [showFontList, setShowFontList] = useState(false);
   const inActiveFonts = fonts.filter((font) => font.id !== activeFont.id);
-
-  const getFontById = (id) => fonts.find((font) => font.id === id);
 
   const handleLabelClick = (e, id) => {
     const nextFont = getFontById(id);
     setActiveFont(nextFont);
-    setRootProp(BODY_FONT_CUSTOM_PROP, nextFont.cssFontFamily);
   };
 
   const handleBtnClick = (e) => {
@@ -55,6 +36,11 @@ function TypographySwitcher() {
 
   const switcherRef = useOutsideClick(hideFontList);
 
+  useEffect(() => {
+    UserConfig.setPreferredFontId(activeFont.id);
+    setRootProp(BODY_FONT_CUSTOM_PROP, activeFont.cssFontFamily);
+  }, [activeFont]);
+
   return (
     <form className="typography-switcher" ref={switcherRef}>
       <TypographyItem
@@ -66,7 +52,7 @@ function TypographySwitcher() {
         <Arrow />
       </button>
       {showFontList && (
-        <ul className="typography-switcher__list" >
+        <ul className="typography-switcher__list">
           <li key={activeFont.id} className="typography-switcher__list-item">
             <TypographyItem
               id={activeFont.id}

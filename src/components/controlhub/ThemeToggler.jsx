@@ -1,25 +1,38 @@
 import { useEffect, useState } from "react";
-import { lightModeCfg, darkModeCfg } from "../../config/themes";
+import { lightSchemeCfg, darkSchemeCfg } from "../../config/themes";
 import { setRootProp } from "../../utils/css";
+import UserConfig from "../../config/user";
 import Moon from "../svg/Moon";
 
 function ThemeToggler() {
-  const prefersDarkScheme =
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [isDark, setIsDark] = useState(prefersDarkScheme);
+  const getInitIsDark = () => {
+    const systemPref =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  const onThemeToggle = (e) => {
-    const nextIsDark = e.target.checked;
-    setIsDark(nextIsDark);
+    return UserConfig.hasPreferredScheme()
+      ? UserConfig.getPrefersDarkScheme()
+      : systemPref;
+  };
 
+  const [isDark, setIsDark] = useState(getInitIsDark());
+
+  const setScheme = (isDark) => {
     //Type: Map
-    const config = nextIsDark ? darkModeCfg : lightModeCfg;
-
+    const config = isDark ? darkSchemeCfg : lightSchemeCfg;
     config.forEach((value, property) => {
       setRootProp(property, value);
     });
   };
+
+  const onThemeToggle = (e) => {
+    setIsDark(e.target.checked);
+  };
+
+  useEffect(() => {
+    UserConfig.setPrefersDarkScheme(isDark);
+    setScheme(isDark);
+  }, [isDark]);
 
   return (
     <form className="theme-toggler">

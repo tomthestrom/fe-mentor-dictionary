@@ -20,6 +20,7 @@ lightMode.set(DRP_DWN_B_SHDW, "var(--box-shadow-dark)");
 darkMode.set(MAIN_BG_CLR, "var(--color-black-05)");
 darkMode.set(MAIN_FONT_CLR, "var(--color-white-FF)");
 darkMode.set(SEARCH_BG_CLR, "var(--color-black-2D)");
+darkMode.set(SEARCH_PHOLDER_CLR, "var(--color-grey-F4)");
 darkMode.set(DRP_DWN_BG_CLR, "var(--search-bar-bg-color)");
 darkMode.set(DRP_DWN_B_SHDW, "var(--box-shadow-purple)");
 

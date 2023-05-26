@@ -1,6 +1,8 @@
 .search-bar {
-  position: relative;
+  // position: relative;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
 
   &__input {
     font-size: var(--font-size--m);
@@ -9,9 +11,12 @@
     font-weight: 700;
     background-color: var(--search-bar-bg-color);
     width: 100%;
-    border-radius: 1rem;
-    border: none;
-    padding: calc((14 / 16) * 1rem) 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid var(--main-bg-color);
+    border-right: none;
+    padding: calc((13 / 16) * 1rem) 0;
+    padding-left: 1.5rem;
 
     &::placeholder {
       color: var(--search-bar-placeholder-color);
@@ -20,7 +25,8 @@
     &:focus,
     &:focus-visible {
       color: var(--main-font-color);
-      outline: 1px solid var(--color-purple-default);
+      border: 1px solid var(--color-purple-default);
+      border-right: none;
     }
 
     //override chrome defaults when autofilling
@@ -33,14 +39,23 @@
     }
   }
 
+  &__input:focus + &__submit, &__input:focus-visible + &__submit {
+      border: 1px solid var(--color-purple-default);
+      border-left: none;
+  }
+
   &__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--search-bar-bg-color);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
     height: 1rem;
+    padding: calc((23 / 16) * 1rem) 0;
     padding-right: 1.5rem;
+    border: 1px solid var(--main-bg-color);
+    border-left: none;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     svg {
       width: 1rem;
     }

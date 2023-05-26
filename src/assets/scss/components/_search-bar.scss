@@ -4,20 +4,22 @@
 
   &__input {
     font-size: var(--font-size--m);
+    color: var(--main-font-color);
     line-height: 1.2;
     font-weight: 700;
-    background-color: var(--color-grey-F4);
+    background-color: var(--search-bar-bg-color);
     width: 100%;
     border-radius: 1rem;
     border: none;
     padding: calc((14 / 16) * 1rem) 1.5rem;
 
     &::placeholder {
-      color: var(--color-grey-75);
+      color: var(--search-bar-placeholder-color);
     }
 
     &:focus,
     &:focus-visible {
+      color: var(--main-font-color);
       outline: 1px solid var(--color-purple-default);
     }
 
@@ -26,12 +28,13 @@
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0 30px var(--color-grey-F4) inset !important;
+      -webkit-box-shadow: 0 0 0 1000px var(--search-bar-bg-color) inset !important;
+      -webkit-text-fill-color: var(--main-font-color) !important;
     }
   }
 
   &__submit {
-    background-color: var(--color-grey-F4);
+    background-color: var(--search-bar-bg-color);
     position: absolute;
     top: 50%;
     right: 0;

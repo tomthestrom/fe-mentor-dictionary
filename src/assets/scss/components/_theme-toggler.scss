@@ -20,15 +20,29 @@
 
     &:after {
       position: absolute;
-      top: 50%;
-      left: 25%;
-      transform: translate(-50%, -50%);
+      top: 0.2rem;
+      left: 0.2rem;
       display: inline-block;
       content: "";
       height: calc((14 / 16) * 1rem);
       width: calc((14 / 16) * 1rem);
       border-radius: 50%;
       background: var(--color-white-FF);
+      transition: transform 0.3s;
+    }
+
+    &:checked::before {
+      background: var(--color-purple-default);
+    }
+
+    &:checked::after {
+      transform: translate(calc((20 / 16) * 1rem), 0);
+    }
+  }
+
+  &__checkbox:checked + &__moon {
+    svg path{
+      stroke: var(--color-purple-default);
     }
   }
 

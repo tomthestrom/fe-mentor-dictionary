@@ -2,6 +2,7 @@ import TypographyItem from "./TypographyItem";
 import Arrow from "../svg/Arrow";
 import { useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import { setRootProp } from "../../utils/css";
 /**
  * @TODO: Maybe put it into some config?
  */
@@ -41,7 +42,7 @@ function TypographySwitcher() {
   const handleLabelClick = (e, id) => {
     const nextFont = getFontById(id);
     setActiveFont(nextFont);
-    setBodyFont(nextFont.cssFontFamily);
+    setRootProp(BODY_FONT_CUSTOM_PROP, nextFont.cssFontFamily);
   };
 
   const handleBtnClick = (e) => {
@@ -51,13 +52,6 @@ function TypographySwitcher() {
 
   const toggleFontList = () => setShowFontList(!showFontList);
   const hideFontList = () => setShowFontList(false);
-
-  const setBodyFont = (fontFamilyValue) => {
-    document.documentElement.style.setProperty(
-      BODY_FONT_CUSTOM_PROP,
-      fontFamilyValue
-    );
-  };
 
   const switcherRef = useOutsideClick(hideFontList);
 

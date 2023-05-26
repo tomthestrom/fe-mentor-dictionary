@@ -12,6 +12,12 @@
 }
 
 :root {
+  color-scheme: light dark;
+
+  --color-black-05: #050505;
+  --color-black-1F: #1f1f1f;
+  --color-black-2D: #2d2d2d;
+  --color-black-3A: #3a3a3a;
   --color-grey-75: #757575;
   --color-grey-E9: #e9e9e9;
   --color-grey-F4: #f4f4f4;
@@ -20,6 +26,25 @@
 
   --color-purple-default: #a445ed;
   --z-index-typography-dropdown: 1000;
+  --box-shadow-dark: 0 0 4px 4px rgba(0, 0, 0, 0.25);
+  --box-shadow-purple: 0 0 4px 4px rgba(164, 69, 237, 0.25);
+
+  //prefers-color-scheme: light: 
+  --main-bg-color: var(--color-white-FF);
+  --main-font-color: var(--color-black-2D);
+  --search-bar-bg-color: var(--color-grey-F4);
+  --search-bar-placeholder-color: var(--color-grey-75);
+  --drp-dwn-bg-color: var(--main-bg-color);
+  --drp-dwn-b-shadow: var(--box-shadow-dark);
+
+  @media (prefers-color-scheme: dark) {
+    --main-bg-color: var(--color-black-05);
+    --main-font-color: var(--color-white-FF);
+    --search-bar-bg-color: var(--color-black-2D);
+    --search-bar-placeholder-color: var(--color-grey-F4);
+    --drp-dwn-b-shadow: var(--box-shadow-purple);
+    --drp-dwn-bg-color: var(--search-bar-bg-color);
+  }
 }
 
 button {
@@ -28,6 +53,8 @@ button {
 }
 
 body {
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
   margin: 1.5rem 1.5rem 5.25rem 1.5rem;
   box-sizing: border-box;
 }

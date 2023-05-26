@@ -17,7 +17,8 @@
   }
 
   &__list {
-    background-color: var(--color-white-FF);
+    background-color: var(--drp-dwn-bg-color);
+    color: var(--main-font-color);
     position: absolute;
     top: 1.75rem;
     right: 1rem;
@@ -26,7 +27,7 @@
     z-index: var(--z-index-typography-dropdown);
     white-space: nowrap;
     border-radius: calc((30/16) * 1rem);
-    box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: var(--drp-dwn-b-shadow);
     
     &-item:not(:last-child) {
       margin-bottom: 1rem;

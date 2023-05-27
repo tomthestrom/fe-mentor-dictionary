@@ -7,10 +7,21 @@
     margin-bottom: 1rem;
   }
   &__function {
+    display: flex;
     font-size: var(--font-size--l);
     font-weight: bold;
     font-style: italic;
     margin-bottom: 2rem;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      border-top: 1px solid var(--border-color);
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+    }
   }
 
   &__meaning {

@@ -29,13 +29,14 @@
   --box-shadow-dark: 0 0 4px 4px rgba(0, 0, 0, 0.25);
   --box-shadow-purple: 0 0 4px 4px rgba(164, 69, 237, 0.25);
 
-  //prefers-color-scheme: light: 
+  //prefers-color-scheme: light:
   --main-bg-color: var(--color-white-FF);
   --main-font-color: var(--color-black-2D);
   --search-bar-bg-color: var(--color-grey-F4);
   --search-bar-placeholder-color: var(--color-grey-75);
   --drp-dwn-bg-color: var(--main-bg-color);
   --drp-dwn-b-shadow: var(--box-shadow-dark);
+  --border-color: var(--color-grey-E9);
 
   @media (prefers-color-scheme: dark) {
     --main-bg-color: var(--color-black-05);
@@ -44,6 +45,7 @@
     --search-bar-placeholder-color: var(--color-grey-F4);
     --drp-dwn-b-shadow: var(--box-shadow-purple);
     --drp-dwn-bg-color: var(--search-bar-bg-color);
+    --border-color: var(--color-black-3A);
   }
 }
 

@@ -23,7 +23,7 @@
     top: 1.75rem;
     right: 1rem;
     list-style: none;
-    padding: 1.5rem calc((69/16) * 1rem) 1.5rem 1.5rem;
+    padding: 1.5rem pRem(69) 1.5rem 1.5rem;
     z-index: var(--z-index-typography-dropdown);
     white-space: nowrap;
     border-radius: calc((30/16) * 1rem);

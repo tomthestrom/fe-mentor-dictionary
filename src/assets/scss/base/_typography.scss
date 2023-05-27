@@ -18,27 +18,26 @@
   font-family: "Lora";
   font-style: normal;
   src: local("Lora"),
-    url("../../fonts/lora/Lora-VariableFont_wght.ttf")
-      format("opentype");
+    url("../../fonts/lora/Lora-VariableFont_wght.ttf") format("opentype");
 }
 
 @font-face {
   font-family: "Lora";
   font-style: italic;
   src: local("Lora"),
-    url("../../fonts/lora/Lora-Italic-VariableFont_wght.ttf")
-      format("opentype");
+    url("../../fonts/lora/Lora-Italic-VariableFont_wght.ttf") format("opentype");
 }
-:root {
-  --font-size--s: calc((14/16) * 1rem);; /* 14px */
-  --font-size--m: calc((16/16) * 1rem); /* 16px */
-  --font-size--l: calc((18/16) * 1rem); /* 16px */
 
-  --font-size--heading-s: calc((20/16) * 1rem); /* 20px */
-  --font-size--heading-m: calc((24/16) * 1rem); /* 24px */
-  --font-size--heading-l: calc((32/16) * 1rem); /* 64px */
-  --font-size--heading-xl: calc((64/16) * 1rem); /* 64px */
-  
+:root {
+  --font-size--s: #{pRem(14)};
+  --font-size--m: #{pRem(16)}; /* 16px */
+  --font-size--l: #{pRem(18)}; /* 16px */
+
+  --font-size--heading-s: #{pRem(20)}; /* 20px */
+  --font-size--heading-m: #{pRem(24)}; /* 24px */
+  --font-size--heading-l: #{pRem(32)}; /* 32px */
+  --font-size--heading-xl: #{pRem(64)}; /* 64px */
+
   --default-font-family: "Inconsolata", monospace;
   --body-font-family: var(--default-font-family);
 }

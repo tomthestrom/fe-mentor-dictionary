@@ -24,8 +24,8 @@
       left: 0.2rem;
       display: inline-block;
       content: "";
-      height: calc((14 / 16) * 1rem);
-      width: calc((14 / 16) * 1rem);
+      height: pRem(14);
+      width: pRem(14);
       border-radius: 50%;
       background: var(--color-white-FF);
       transition: transform 0.3s;
@@ -36,7 +36,7 @@
     }
 
     &:checked::after {
-      transform: translate(calc((20 / 16) * 1rem), 0);
+      transform: translate(pRem(20), 0);
     }
   }
 

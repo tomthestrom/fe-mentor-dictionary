@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2.5rem 1.5rem;
-  margin-bottom: calc((34/16) * 1rem);
+  margin-bottom: pRem(34);
 
   &__word {
     grid-area: 1 / 1 / 2 / 2;

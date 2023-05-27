@@ -15,7 +15,7 @@
     border-bottom-left-radius: 1rem;
     border: 1px solid var(--main-bg-color);
     border-right: none;
-    padding: calc((13 / 16) * 1rem) 0;
+    padding: pRem(13) 0;
     padding-left: 1.5rem;
 
     &::placeholder {
@@ -50,7 +50,7 @@
     align-items: center;
     background-color: var(--search-bar-bg-color);
     height: 1rem;
-    padding: calc((23 / 16) * 1rem) 0;
+    padding: pRem(23);
     padding-right: 1.5rem;
     border: 1px solid var(--main-bg-color);
     border-left: none;

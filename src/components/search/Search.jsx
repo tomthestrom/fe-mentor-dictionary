@@ -9,12 +9,12 @@ import NoResults from "./NoResults";
  * upon search via the search bar, the results are displayed in SearchResults
  */
 function Search() {
-  const [searchRes, setSearchRes] = useState({});
+  const [searchRes, setSearchRes] = useState();
 
   return (
     <>
       <SearchBar setSearchRes={setSearchRes} />
-      {searchRes && Object.keys(searchRes).length > 0 && (
+      {searchRes && Object.keys(searchRes).length > 0 && !searchRes.errMsg && (
         <SearchResults props={searchRes} />
       )}
       {searchRes && Object.keys(searchRes).length === 0 && <NoResults />}

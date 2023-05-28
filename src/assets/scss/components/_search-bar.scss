@@ -49,6 +49,11 @@
       -webkit-box-shadow: 0 0 0 1000px var(--search-bar-bg-color) inset !important;
       -webkit-text-fill-color: var(--main-font-color) !important;
     }
+
+    &--error {
+      border: 1px solid var(--color-red-default);
+      border-right: none;
+    }
   }
 
   &__input:focus + &__submit,
@@ -73,5 +78,14 @@
     svg {
       width: 1rem;
     }
+
+    &--error {
+      border: 1px solid var(--color-red-default);
+      border-left: none;
+    }
+  }
+
+  &__error {
+    color: red;
   }
 }

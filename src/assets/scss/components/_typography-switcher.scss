@@ -1,13 +1,26 @@
 .typography-switcher {
+  cursor: pointer;
   font-weight: 700;
-  line-height: 1.5;
+  font-size: var(--font-size--s);
+  line-height: 1.72;
   padding-right: 1rem;
   border-right: 1px solid var(--color-grey-E9);
   margin-right: 1rem;
   position: relative;
 
+  @include respond(tablet) {
+    font-size: var(--font-size--l);
+    line-height: 1.333333;
+  }
+
   &__label {
+    font-size: inherit;
     padding-right: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-purple-default);
+    }
   }
 
   &__radio {

@@ -1,17 +1,29 @@
 .pof-speech {
   &:not(:last-child) {
     margin-bottom: 2rem;
+
+    @include respond(tablet) {
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__header {
     margin-bottom: 1rem;
+
+    @include respond(tablet) {
+      margin-bottom: pRem(27);
+    }
   }
   &__function {
     display: flex;
     font-size: var(--font-size--l);
     font-weight: bold;
-    font-style: italic;
     margin-bottom: 2rem;
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-m);
+      margin-bottom: pRem(42);
+    }
 
     &::after {
       display: inline-block;
@@ -28,12 +40,21 @@
     color: var(--color-grey-75);
     font-weight: normal;
     font-size: var(--font-size-m);
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-s);
+      // margin-bottom: pRem(42);
+    }
   }
 
   &__entries {
     list-style: none;
     &:not(:last-child) {
       margin-bottom: 1.5rem;
+
+      @include respond(tablet) {
+        margin-bottom: pRem(42);
+      }
     }
   }
 
@@ -43,6 +64,11 @@
     padding-left: 1rem;
     &:not(:last-child) {
       margin-bottom: 0.75rem;
+    }
+
+    @include respond(tablet) {
+      font-size: var(--font-size--l);
+      line-height: 1.333333;
     }
 
   }
@@ -71,8 +97,12 @@
   &__synonyms-title {
     color: var(--color-grey-75);
     font-weight: normal;
-    font-size: var(--font-size-m);
+    font-size: var(--font-size--m);
     margin-right: 2.5rem;
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-s);
+    }
   }
 
   &__synonyms {
@@ -86,6 +116,10 @@
 
     &:not(:last-child) {
       margin-bottom: 0.25rem;
+    }
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-s);
     }
   }
 }

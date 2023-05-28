@@ -2,13 +2,21 @@
   display: flex;
   margin-bottom: 1.5rem;
 
+  @include respond(tablet) {
+    margin-bottom: 4rem;
+  }
+
   &__home {
     height: 2rem;
-    width: 1.5rem;
+    width: 2rem;
     margin-right: auto;
     img {
       height: inherit;
       width: inherit;
+    }
+
+    @include respond(tablet) {
+      height: pRem(36.5);
     }
   }
 

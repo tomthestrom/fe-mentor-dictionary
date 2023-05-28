@@ -59,4 +59,13 @@ body {
   color: var(--main-font-color);
   margin: 1.5rem 1.5rem 5.25rem 1.5rem;
   box-sizing: border-box;
+
+  @include respond(tablet) {
+    max-width: pRem(689); 
+    margin: pRem(58) auto;
+  }
+  @include respond(desktop) {
+    max-width: pRem(737); 
+  }
 }
+

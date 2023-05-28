@@ -4,10 +4,24 @@
   grid-template-rows: 2.5rem 1.5rem;
   margin-bottom: pRem(34);
 
+  @include respond(tablet) {
+    grid-template-rows: pRem(67) pRem(29);
+    grid-row-gap: pRem(11);
+    margin-bottom: pRem(42);
+  }
+
+  @include respond(desktop) {
+    grid-row-gap: 1.25rem;
+  }
+
   &__word {
     grid-area: 1 / 1 / 2 / 2;
     font-size: var(--font-size--heading-l);
     line-height: 1.25;
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-xl);
+    }
   }
   &__spoken {
     grid-area: 2 / 1 / -1 / 1;
@@ -16,17 +30,39 @@
     color: var(--color-purple-default);
     font-size: var(--font-size--l);
     line-height: 1.333333;
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-m);
+    }
   }
 
   &__play {
+    cursor: pointer;
     grid-area: 1 / 2 / -1 / -1;
     align-self: center;
     justify-self: end;
     height: 3rem;
     width: 3rem;
+    @include respond(tablet) {
+      height: pRem(75);
+      width: pRem(75);
+    }
+
     svg {
       height: inherit;
       width: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      svg g {
+        circle {
+          opacity: 1;
+        }
+        path {
+          fill: var(--color-white-FF);
+        }
+      }
     }
   }
 }

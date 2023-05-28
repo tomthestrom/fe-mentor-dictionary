@@ -1,8 +1,15 @@
 .search-bar {
-  // position: relative;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+
+  @include respond(tablet) {
+    margin-bottom: pRem(50);
+  }
+
+  @include respond(desktop) {
+    margin-bottom: pRem(42);
+  }
 
   &__input {
     font-size: var(--font-size--m);
@@ -15,8 +22,13 @@
     border-bottom-left-radius: 1rem;
     border: 1px solid var(--main-bg-color);
     border-right: none;
-    padding: pRem(13) 0;
+    padding: pRem(20) 0;
     padding-left: 1.5rem;
+
+    @include respond(tablet) {
+      font-size: var(--font-size--heading-s);
+      line-height: 1.1;
+    }
 
     &::placeholder {
       color: var(--search-bar-placeholder-color);
@@ -39,18 +51,20 @@
     }
   }
 
-  &__input:focus + &__submit, &__input:focus-visible + &__submit {
-      border: 1px solid var(--color-purple-default);
-      border-left: none;
+  &__input:focus + &__submit,
+  &__input:focus-visible + &__submit {
+    border: 1px solid var(--color-purple-default);
+    border-left: none;
   }
 
   &__submit {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--search-bar-bg-color);
     height: 1rem;
-    padding: pRem(23);
+    padding: pRem(31);
     padding-right: 1.5rem;
     border: 1px solid var(--main-bg-color);
     border-left: none;

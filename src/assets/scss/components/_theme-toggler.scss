@@ -31,22 +31,23 @@
       transition: transform 0.3s;
     }
 
-    &:checked::before {
+    &:checked::before, &:hover::before {
       background: var(--color-purple-default);
     }
 
-    &:checked::after {
+    &:checked::after, &:hover::after {
       transform: translate(pRem(20), 0);
     }
   }
 
-  &__checkbox:checked + &__moon {
+  &__checkbox:checked + &__moon, &:hover {
     svg path{
       stroke: var(--color-purple-default);
     }
   }
 
   &__moon {
+    cursor: pointer;
     display: inline-block;
     svg {
       width: 1.25rem;

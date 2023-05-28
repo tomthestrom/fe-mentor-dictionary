@@ -15,13 +15,13 @@ function SearchBar({setSearchRes}) {
     try {
       const response = await fetch(makeRequestURL(searchVal));
       if (!response.ok) {
-        throw new Error("No Definitions Found");
+        throw new Error(response.statusText);
       }
+
       const json = await response.json();
       setSearchRes(json[0]);
     } catch (e) {
-      console.error(e);
-      setSearchRes({})
+      setSearchRes({});
     }
   };
 

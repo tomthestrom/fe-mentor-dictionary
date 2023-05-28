@@ -1,0 +1,19 @@
+.no-results {
+    text-align: center;
+
+    &__emoticon {
+        font-size: 4rem;
+        margin-bottom: pRem(44);
+    }
+
+    &__heading {
+        color: var(--main-font-color);
+        font-size: var(--font-size--heading-s);
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+        color: var(--search-bar-placeholder-color);
+        font-size: var(--font-size--l);
+    }
+}

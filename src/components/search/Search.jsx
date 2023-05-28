@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import SearchBar from "./SearchBar";
 import SearchResults from "./SearchResults";
+import NoResults from "./NoResults";
 
 /**
  * Houses the search bar
@@ -13,7 +14,10 @@ function Search() {
   return (
     <>
       <SearchBar setSearchRes={setSearchRes} />
-      {searchRes && Object.keys(searchRes).length > 0 && <SearchResults props={searchRes} />}
+      {searchRes && Object.keys(searchRes).length > 0 && (
+        <SearchResults props={searchRes} />
+      )}
+      {searchRes && Object.keys(searchRes).length === 0 && <NoResults />}
     </>
   );
 }

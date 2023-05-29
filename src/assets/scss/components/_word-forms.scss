@@ -44,15 +44,15 @@
       height: inherit;
       width: inherit;
     }
-
-    &:hover,
-    &:focus {
-      svg g {
-        circle {
-          opacity: 1;
-        }
-        path {
-          fill: var(--color-white-FF);
+    @include has-hover() {
+      &:hover {
+        svg g {
+          circle {
+            opacity: 1;
+          }
+          path {
+            fill: var(--color-white-FF);
+          }
         }
       }
     }

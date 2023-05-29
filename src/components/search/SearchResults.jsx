@@ -65,7 +65,7 @@ function SearchResults({ props }) {
           <PartOfSpeech key={partOfSpeech.partOfSpeech} props={partOfSpeech} />
         ))}
       </main>
-      <Footer sourceUrl={sourceUrl} />
+      {sourceUrl && <Footer sourceUrl={sourceUrl} />}
     </>
   );
 }

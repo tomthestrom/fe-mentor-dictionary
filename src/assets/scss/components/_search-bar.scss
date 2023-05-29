@@ -2,24 +2,22 @@
   display: flex;
   align-items: center;
 
-
   &__input {
     font-size: var(--font-size--m);
     color: var(--main-font-color);
-    line-height: 1.2;
     font-weight: 700;
     background-color: var(--search-bar-bg-color);
+    height: 3rem;
     width: 100%;
+    padding-left: 1.5rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border: 1px solid var(--main-bg-color);
     border-right: none;
-    padding: pRem(20) 0;
-    padding-left: 1.5rem;
 
     @include respond(tablet) {
       font-size: var(--font-size--heading-s);
-      line-height: 1.1;
+      height: 4rem;
     }
 
     &::placeholder {
@@ -60,15 +58,18 @@
     justify-content: center;
     align-items: center;
     background-color: var(--search-bar-bg-color);
-    height: 1rem;
-    padding: pRem(31);
-    padding-right: 1.5rem;
+    height: 3rem;
+    padding: 0 1.5rem;
     border: 1px solid var(--main-bg-color);
     border-left: none;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     svg {
       width: 1rem;
+    }
+
+    @include respond(tablet) {
+      height: 4rem;
     }
 
     &--error {

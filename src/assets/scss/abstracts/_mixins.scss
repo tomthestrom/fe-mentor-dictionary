@@ -1,14 +1,8 @@
 /*
-Breakpoints based on design (one card (media-today or media-total has the width of 255px on dsktp dsgn)
-*/
-
-/*
 $breakpoint argument choices:
 -tablet
 -desktop
-
 */
-
 @mixin respond($breakpoint) {
   @if $breakpoint == tablet {
     @media (min-width: 48em) {
@@ -20,5 +14,11 @@ $breakpoint argument choices:
     @media (min-width: 64em) {
       @content;
     }
+  }
+}
+
+@mixin has-hover() {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
   }
 }

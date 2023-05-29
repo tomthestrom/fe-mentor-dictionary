@@ -20,6 +20,7 @@ function SearchBar({ setSearchRes }) {
 
     if (wordToLookUp.length == 0) {
       setIsValError(true);
+      setSearchRes();
       setSearchVal(wordToLookUp);
       return;
     }

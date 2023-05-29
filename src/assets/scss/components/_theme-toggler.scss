@@ -3,6 +3,8 @@
   align-items: center;
 
   &__checkbox {
+    -moz-appearance: initial; // Hack for Firefox Browsers
+    appearance: initial;
     position: relative;
     height: 1.25rem;
     width: 2.5rem;
@@ -31,17 +33,28 @@
       transition: transform 0.3s;
     }
 
-    &:checked::before, &:hover::before {
+    &:checked::before {
       background: var(--color-purple-default);
     }
 
-    &:checked::after, &:hover::after {
+    &:checked::after {
       transform: translate(pRem(20), 0);
+    }
+
+    @include has-hover() {
+      &:hover::before {
+        background: var(--color-purple-default);
+      }
+
+      &:hover::after {
+        transform: translate(pRem(20), 0);
+      }
     }
   }
 
-  &__checkbox:checked + &__moon, &:hover {
-    svg path{
+  &__checkbox:checked + &__moon,
+  &:hover {
+    svg path {
       stroke: var(--color-purple-default);
     }
   }

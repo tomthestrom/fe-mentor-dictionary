@@ -5,6 +5,10 @@
   grid-row-gap: 0.5rem;
   margin-bottom: pRem(34);
 
+  @include respond(desktop) {
+    grid-row-gap: pRem(15);
+  }
+
   &__word {
     grid-area: 1 / 1 / 2 / 2;
     font-size: var(--font-size--heading-l);

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Search from "../svg/Search";
 
@@ -67,8 +68,14 @@ function SearchBar({ setSearchRes }) {
           <Search />
         </button>
       </form>
-      {isValError && <div className="search-bar__error">{EMPTY_SEARCH_ERR}</div>}
+      {isValError && (
+        <div className="search-bar__error">{EMPTY_SEARCH_ERR}</div>
+      )}
     </>
   );
 }
+
+SearchBar.propTypes = {
+  setSearchRes: PropTypes.func,
+};
 export default SearchBar;

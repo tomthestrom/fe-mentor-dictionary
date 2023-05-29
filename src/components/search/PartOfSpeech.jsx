@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
+
 /**
  * Contains the description of the word for the given part of speech (noun, verb, pronoun, etc.)
  */
 function PartOfSpeech({ props }) {
   const { partOfSpeech, definitions, synonyms } = props;
-
   return (
     <section className="pof-speech">
       <header className="pof-speech__header">
@@ -15,10 +16,12 @@ function PartOfSpeech({ props }) {
         {definitions.map((definition, i) => {
           return (
             <li key={i} className="pof-speech__entry">
-              <span className="pof-speech__definition">{definition.definition}</span>
-              {definition.example && 
-              <div className="pof-speech__example">{`"${definition.example}"`}</div> 
-              }
+              <span className="pof-speech__definition">
+                {definition.definition}
+              </span>
+              {definition.example && (
+                <div className="pof-speech__example">{`"${definition.example}"`}</div>
+              )}
             </li>
           );
         })}
@@ -41,4 +44,12 @@ function PartOfSpeech({ props }) {
     </section>
   );
 }
+
+PartOfSpeech.propTypes = {
+  props: PropTypes.object,
+  partOfSpeech: PropTypes.array,
+  definitions: PropTypes.array,
+  synonyms: PropTypes.array,
+};
+
 export default PartOfSpeech;

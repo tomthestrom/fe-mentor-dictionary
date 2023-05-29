@@ -9,7 +9,7 @@ import TypographySwitcher from "./TypographySwitcher";
  * Theme switcher
  */
 const HOME_URL = document.location.href;
-const LOGO_URL = "./src/assets/images/logo.svg";
+const LOGO_URL = "./logo.svg";
 
 function ControlHub() {
   return (

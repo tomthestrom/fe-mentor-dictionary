@@ -52,8 +52,7 @@
     }
   }
 
-  &__checkbox:checked + &__moon,
-  &:hover {
+  &__checkbox:checked + &__moon {
     svg path {
       stroke: var(--color-purple-default);
     }
@@ -62,9 +61,16 @@
   &__moon {
     cursor: pointer;
     display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
     svg {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: inherit;
+      height: inherit;
+    }
+  }
+  @include has-hover() {
+    svg path {
+      stroke: var(--color-purple-default);
     }
   }
 }

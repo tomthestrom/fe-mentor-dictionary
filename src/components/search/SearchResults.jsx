@@ -1,43 +1,44 @@
+import PropTypes from "prop-types";
 import { useRef } from "react";
 import Play from "../svg/Play";
 import PartOfSpeech from "./PartOfSpeech";
 import Footer from "./Footer";
 
 function SearchResults({ props }) {
-  console.log(props);
+  const { phonetic, phonetics, word, meanings, sourceUrls } = props;
   const audioRef = useRef(null);
   const handleClick = () => {
     audioRef.current.play();
   };
 
-  const defaultPhonetic = props.phonetic ?? ""; 
+  const defaultPhonetic = phonetic ?? "";
 
   /**
    * Sometimes the default value (props.phonetic) is a "strange one"
    * consisting of too few chars
    * here we check whether there's a longer phonetic transcription
    */
-  const phoneticTrans =  props?.phonetics?.reduce((acc, val) => {
+  const phoneticTrans = phonetics?.reduce((acc, val) => {
     if (val.text && val.text.length > acc.length) {
       acc = val.text;
     }
     return acc;
   }, defaultPhonetic);
 
-  const audioUrl = props?.phonetics?.reduce((url, item) => {
+  const audioUrl = phonetics?.reduce((url, item) => {
     if (item.audio && item.audio.length > 0) {
       url = item.audio;
     }
     return url;
   }, null);
 
-  const sourceUrl = props?.sourceUrls[0];
+  const sourceUrl = sourceUrls[0] ?? "";
 
   return (
     <>
       <main className="search-results">
         <header className="word-forms">
-          <h1 className="word-forms__word">{props.word}</h1>
+          <h1 className="word-forms__word">{word}</h1>
           {phoneticTrans && (
             <figcaption className="word-forms__spoken">
               <figcaption className="word-forms__phonetic">
@@ -61,7 +62,7 @@ function SearchResults({ props }) {
             </button>
           )}
         </header>
-        {props.meanings.map((partOfSpeech) => (
+        {meanings.map((partOfSpeech) => (
           <PartOfSpeech key={partOfSpeech.partOfSpeech} props={partOfSpeech} />
         ))}
       </main>
@@ -69,4 +70,14 @@ function SearchResults({ props }) {
     </>
   );
 }
+
+SearchResults.propTypes = {
+  props: PropTypes.object,
+  word: PropTypes.string,
+  phonetic: PropTypes.array,
+  phonetics: PropTypes.array,
+  meanings: PropTypes.array,
+  sourceUrls: PropTypes.array,
+};
+
 export default SearchResults;

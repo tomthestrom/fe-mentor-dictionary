@@ -10,7 +10,7 @@ const User = (function () {
   };
 
   const getScheme = () => localStorage.getItem(SCHEME_KEY);
-  ;
+
   const setPreferredFontId = (fontId) => {
     localStorage.setItem("font", fontId);
   };

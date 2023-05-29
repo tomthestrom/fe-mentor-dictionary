@@ -11,12 +11,9 @@ This is a solution to the [Dictionary web app challenge on Frontend Mentor](http
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -39,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/dictionary-web-app-react-XJjzcyUarm)
+- Solution URL - unfortunately here the screenshot taken by FE Mentor is not 100% matching the reality, so it's not quite possible to compare it with the design - as it lacks some styling that is present on the live site - better check and compare it with the live site...enough talk, the solution posted on FE mentor is here: [Frontend Mentor](https://www.frontendmentor.io/solutions/dictionary-web-app-react-XJjzcyUarm)
 - Live Site URL: [Dictionary Web App - GH Pages](https://tomthestrom.github.io/fe-mentor-dictionary/)
 
 ## My process

@@ -2,7 +2,7 @@
   font-family: "Inconsolata";
   font-style: normal;
   src: local("Inconsolata"),
-    url("../../fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
+    url("../fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf")
       format("opentype");
 }
 
@@ -10,7 +10,7 @@
   font-family: "Inter";
   font-style: normal;
   src: local("Inter"),
-    url("../../fonts/inter/Inter-VariableFont_slnt\,wght.ttf")
+    url("../fonts/inter/Inter-VariableFont_slnt\,wght.ttf")
       format("opentype");
 }
 
@@ -18,14 +18,14 @@
   font-family: "Lora";
   font-style: normal;
   src: local("Lora"),
-    url("../../fonts/lora/Lora-VariableFont_wght.ttf") format("opentype");
+    url("../fonts/lora/Lora-VariableFont_wght.ttf") format("opentype");
 }
 
 @font-face {
   font-family: "Lora";
   font-style: italic;
   src: local("Lora"),
-    url("../../fonts/lora/Lora-Italic-VariableFont_wght.ttf") format("opentype");
+    url("../fonts/lora/Lora-Italic-VariableFont_wght.ttf") format("opentype");
 }
 
 :root {

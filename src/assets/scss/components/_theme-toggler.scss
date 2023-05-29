@@ -67,10 +67,11 @@
       width: inherit;
       height: inherit;
     }
-  }
-  @include has-hover() {
-    svg path {
-      stroke: var(--color-purple-default);
+
+    @include has-hover() {
+      &:hover svg path {
+        stroke: var(--color-purple-default);
+      }
     }
   }
 }

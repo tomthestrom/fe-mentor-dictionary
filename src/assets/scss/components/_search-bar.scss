@@ -1,15 +1,7 @@
 .search-bar {
-  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
 
-  @include respond(tablet) {
-    margin-bottom: pRem(50);
-  }
-
-  @include respond(desktop) {
-    margin-bottom: pRem(42);
-  }
 
   &__input {
     font-size: var(--font-size--m);
@@ -86,6 +78,7 @@
   }
 
   &__error {
+    padding-top: 0.5rem;
     color: red;
   }
 }

@@ -43,7 +43,6 @@
 
     @include respond(tablet) {
       font-size: var(--font-size--heading-s);
-      // margin-bottom: pRem(42);
     }
   }
 

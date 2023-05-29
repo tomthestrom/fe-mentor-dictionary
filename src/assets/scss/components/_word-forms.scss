@@ -1,18 +1,9 @@
 .word-forms {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 2.5rem 1.5rem;
+  grid-template-rows: minmax(2.5rem, fit-content) minmax(1.5rem, fit-content);
+  grid-row-gap: 0.5rem;
   margin-bottom: pRem(34);
-
-  @include respond(tablet) {
-    grid-template-rows: pRem(67) pRem(29);
-    grid-row-gap: pRem(11);
-    margin-bottom: pRem(42);
-  }
-
-  @include respond(desktop) {
-    grid-row-gap: 1.25rem;
-  }
 
   &__word {
     grid-area: 1 / 1 / 2 / 2;
@@ -21,10 +12,11 @@
 
     @include respond(tablet) {
       font-size: var(--font-size--heading-xl);
+      line-height: 1.05;
     }
   }
   &__spoken {
-    grid-area: 2 / 1 / -1 / 1;
+    grid-area: 2 / 1 / 3 / 1;
   }
   &__phonetic {
     color: var(--color-purple-default);
@@ -38,7 +30,7 @@
 
   &__play {
     cursor: pointer;
-    grid-area: 1 / 2 / -1 / -1;
+    grid-area: 1 / 2 / 3 / 3;
     align-self: center;
     justify-self: end;
     height: 3rem;

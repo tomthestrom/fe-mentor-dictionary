@@ -3,7 +3,7 @@
   margin-bottom: 1.5rem;
 
   @include respond(tablet) {
-    margin-bottom: 4rem;
+    margin-bottom: pRem(54);
   }
 
   &__home {

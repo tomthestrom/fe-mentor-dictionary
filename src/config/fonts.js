@@ -2,7 +2,6 @@ const fonts = [
   {
     id: "mono",
     name: "Mono",
-    default: true,
     cssFontFamily: '"Inconsolata", monospace',
   },
   {
@@ -13,6 +12,7 @@ const fonts = [
   {
     id: "serif",
     name: "Serif",
+    default: true,
     cssFontFamily: '"Lora", serif',
   },
 ];
